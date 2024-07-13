@@ -39,7 +39,7 @@ for episode in range(1, N_episodes + 1):
 ##  Off-policy RL
 ### Initialization
 
-1. Initialize Q-values `Q(s, a)` arbitrarily (e.g., to zero).
+1. Initialize Q-values `Q(S, A)` arbitrarily (e.g., to zero).
 2. Initialize learning rate `α`.
 3. Initialize discount factor `γ`.
 ```python 
@@ -48,10 +48,10 @@ for episode in range(1, N_episodes + 1):
     done = False
 
     while not done:
-        Choose action A using ε-greedy policy based on Q-values Q(s, a)
+        Choose action A using ε-greedy policy based on Q-values Q(S, A)
         Take action A, observe reward R and next state S'
         
-        Q(S, A) = Q(S, A) + α * (R + γ * max_a' Q(S', a') - Q(S, A))
+        Q(S, A) = Q(S, A) + α * (R + γ * max_A' Q(S', A') - Q(S, A))
         
         S = S'
         if S is terminal:
